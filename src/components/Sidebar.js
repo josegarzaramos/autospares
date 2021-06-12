@@ -1,42 +1,43 @@
 // import {useState} from 'react';
-import Accordion from './Accordion';
+// import Accordion from './Accordion';
+import Menu from './Menu';
 
-const items = [
-  {
-    name: 'Refacciones',
-    value: 'Refacciones',
-    childItems: [
-      {
-        nombre: 'Químicos, Aceites y Prods. de Lavado',
-        childItems: [
-          {
-            nombre: 'Alternadores y sistema de carga',
-          },
-          {
-            nombre: 'Baterías',
-          },
-          {
-            nombre: 'Cables de bateria y accesorios',
-          },
-          {
-            nombre: 'Cables de bateria y accesorios',
-          },
-          {
-            nombre: 'Cubiertas de batería',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: 'Interiores',
-    value: 'Interiores',
-  },
-  {
-    name: 'Exteriores',
-    value: 'Exteriores',
-  },
-];
+// const items = [
+//   {
+//     name: 'Refacciones',
+//     value: 'Refacciones',
+//     childItems: [
+//       {
+//         nombre: 'Químicos, Aceites y Prods. de Lavado',
+//         childItems: [
+//           {
+//             nombre: 'Alternadores y sistema de carga',
+//           },
+//           {
+//             nombre: 'Baterías',
+//           },
+//           {
+//             nombre: 'Cables de bateria y accesorios',
+//           },
+//           {
+//             nombre: 'Cables de bateria y accesorios',
+//           },
+//           {
+//             nombre: 'Cubiertas de batería',
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     name: 'Interiores',
+//     value: 'Interiores',
+//   },
+//   {
+//     name: 'Exteriores',
+//     value: 'Exteriores',
+//   },
+// ];
 
 const Sidebar = () => {
   // const [openLink, setOpenLink] = useState()
@@ -52,7 +53,9 @@ const Sidebar = () => {
         <li className="px-1 py-2">Químicos, Aceites y Productos de Lavado</li>
         <li className="px-1 py-2">Alto Desempeño</li>
       </ul> */}
-      <Accordion items={items} />
+      {/* <Accordion items={items} /> */}
+
+      <Menu />
     </div>
   );
 };
