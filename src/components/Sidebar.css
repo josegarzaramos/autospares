@@ -1,0 +1,30 @@
+@keyframes open-menu {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hidde-menu {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.menu {
+  transform: translateX(0);
+  animation: hidde-menu 0.2s forwards;
+}
+
+.open {
+  animation: open-menu 0.2s forwards;
+}
+
+.close {
+  animation: hidde-menu 0.2s forwards;
+}

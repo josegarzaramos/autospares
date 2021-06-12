@@ -1,6 +1,8 @@
-// import {useState} from 'react';
+import { useState } from 'react';
 // import Accordion from './Accordion';
 import Menu from './Menu';
+import { BiMenu } from 'react-icons/bi';
+import './Sidebar.css';
 
 // const items = [
 //   {
@@ -41,10 +43,18 @@ import Menu from './Menu';
 
 const Sidebar = () => {
   // const [openLink, setOpenLink] = useState()
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  const handleMenuClick = () => {
+    setToggleMenu(!toggleMenu);
+    console.log(toggleMenu);
+  };
 
   return (
-    <div id="sidebar-links">
-      {/* <ul className="p-4 w-4/5">
+    <>
+      <BiMenu size="2em" className="m-2" onClick={() => handleMenuClick()} />
+      <div id="sidebar-links" className={`menu${toggleMenu ? ' open' : ''}`}>
+        {/* <ul className="p-4 w-4/5">
         <li className="px-1 py-2">Refacciones</li>
         <li className="px-1 py-2">Interiores</li>
         <li className="px-1 py-2">Exteriores</li>
@@ -53,10 +63,11 @@ const Sidebar = () => {
         <li className="px-1 py-2">Químicos, Aceites y Productos de Lavado</li>
         <li className="px-1 py-2">Alto Desempeño</li>
       </ul> */}
-      {/* <Accordion items={items} /> */}
+        {/* <Accordion items={items} /> */}
 
-      <Menu />
-    </div>
+        <Menu />
+      </div>
+    </>
   );
 };
 

@@ -1,18 +1,11 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
+
+import useFetchCategory from '../hooks/useFetch-hook';
 
 const Dashboard = () => {
-  const [results, setResults] = useState([]);
-
-  useEffect(() => {
-    const renderProducts = async () => {
-      let { data } = await axios.get('http://localhost:5000/productos');
-      setResults(data);
-    };
-
-    renderProducts();
-  }, []);
+  const results = useFetchCategory('categorias');
 
   return (
     <div>
@@ -24,6 +17,7 @@ const Dashboard = () => {
         <h1 className="font-bold">Go to index</h1>
       </Link>
 
+      {/* <p className="p-4">Productos encontrados: {results.length}</p> */}
       {results.map((result) => {
         return (
           <div key={result.nombre} className="p-4">

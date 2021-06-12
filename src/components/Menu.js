@@ -61,12 +61,22 @@
 // };
 
 const Menu = () => {
+  const handleClick = (ev) => {
+    let id = ev.target.id;
+    console.log(id);
+  };
+
   return (
-    <div onClick={(ev) => (ev.target.id ? console.log(ev.target.id) : null)}>
+    <div
+      // onClick={(ev) => (ev.target.id ? console.log(ev.target.id) : null)}
+      className="p-4 w-4/5"
+    >
       <ul>
         <li>
           <div>
-            <h1 id="Refacciones">Refacciones</h1>
+            <h1 id="Refacciones" onClick={(ev) => handleClick(ev)}>
+              Refacciones
+            </h1>
           </div>
         </li>
         <li>
@@ -76,27 +86,29 @@ const Menu = () => {
         </li>
         <li>
           <div>
-            <h1>Exteriores</h1>
+            <h1 id="Exteriores">Exteriores</h1>
           </div>
         </li>
         <li>
           <div>
-            <h1>Remolque</h1>
+            <h1 id="Remolque">Remolque</h1>
           </div>
         </li>
         <li>
           <div>
-            <h1>Herramientas</h1>
+            <h1 id="Herramientas">Herramientas</h1>
           </div>
         </li>
         <li>
           <div>
-            <h1>Químicos, Aceites y Prods. de Lavado</h1>
+            <h1 id="Químicos,-Aceites-y-Prods.-de-Lavado">
+              Químicos, Aceites y Prods. de Lavado
+            </h1>
           </div>
         </li>
         <li>
           <div>
-            <h1>Alto Desempeño</h1>
+            <h1 id="Alto-Desempeño">Alto Desempeño</h1>
           </div>
         </li>
       </ul>
