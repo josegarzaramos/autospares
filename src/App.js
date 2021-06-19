@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-// import Sidebar from './components/Sidebar';
+import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import NewProduct from './pages/NewProduct';
 
@@ -10,7 +10,7 @@ const App = () => {
     <div>
       <Router>
         <Navbar />
-        {/* <Sidebar /> */}
+        <Sidebar />
         <Link
           to={{
             pathname: '/dashboard',

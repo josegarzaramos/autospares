@@ -28,3 +28,9 @@
 .close {
   animation: hidde-menu 0.2s forwards;
 }
+
+.sidebar {
+  position: absolute;
+  top: 58px;
+  bottom: 0;
+}

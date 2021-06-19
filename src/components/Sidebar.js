@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import useFetchCategory from '../hooks/useFetch-hook';
 // import Accordion from './Accordion';
-import Menu from './Menu';
+// import Menu from './Menu';
 import { BiMenu } from 'react-icons/bi';
 import './Sidebar.css';
 
@@ -40,20 +41,29 @@ import './Sidebar.css';
 //     value: 'Exteriores',
 //   },
 // ];
-
 const Sidebar = () => {
   // const [openLink, setOpenLink] = useState()
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  const { children } = useFetchCategory('menu');
+  console.log(children);
 
   const handleMenuClick = () => {
     setToggleMenu(!toggleMenu);
     console.log(toggleMenu);
   };
 
+  // const displayMenu = results.map((result) => console.log(result));
+
   return (
     <>
       <BiMenu size="2em" className="m-2" onClick={() => handleMenuClick()} />
-      <div id="sidebar-links" className={`menu${toggleMenu ? ' open' : ''}`}>
+      <div
+        id="sidebar-links"
+        className={`sidebar absolute bg-blue-600 text-white menu${
+          toggleMenu ? ' open' : ''
+        }`}
+      >
         {/* <ul className="p-4 w-4/5">
         <li className="px-1 py-2">Refacciones</li>
         <li className="px-1 py-2">Interiores</li>
@@ -65,7 +75,14 @@ const Sidebar = () => {
       </ul> */}
         {/* <Accordion items={items} /> */}
 
-        <Menu />
+        {children &&
+          children.map((item) => (
+            <div key={item.category} className="p-4 w-4/5">
+              {item.category}
+            </div>
+          ))}
+
+        {/* <Menu /> */}
       </div>
     </>
   );

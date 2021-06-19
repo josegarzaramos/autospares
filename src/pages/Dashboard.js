@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import useFetchCategory from '../hooks/useFetch-hook';
 
 const Dashboard = () => {
-  const results = useFetchCategory('categorias');
+  const results = useFetchCategory('productos');
 
   return (
     <div>
