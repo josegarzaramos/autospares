@@ -5,7 +5,6 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <h1>App</h1>
       <Sidebar />
     </div>
   );
