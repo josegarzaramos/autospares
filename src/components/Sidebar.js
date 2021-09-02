@@ -1,90 +1,27 @@
-import { useState } from 'react';
-import useFetchCategory from '../hooks/useFetch-hook';
-// import Accordion from './Accordion';
-// import Menu from './Menu';
-import { BiMenu } from 'react-icons/bi';
-import './Sidebar.css';
+import { FaCog, FaTachometerAlt } from 'react-icons/fa';
 
-// const items = [
-//   {
-//     name: 'Refacciones',
-//     value: 'Refacciones',
-//     childItems: [
-//       {
-//         nombre: 'Químicos, Aceites y Prods. de Lavado',
-//         childItems: [
-//           {
-//             nombre: 'Alternadores y sistema de carga',
-//           },
-//           {
-//             nombre: 'Baterías',
-//           },
-//           {
-//             nombre: 'Cables de bateria y accesorios',
-//           },
-//           {
-//             nombre: 'Cables de bateria y accesorios',
-//           },
-//           {
-//             nombre: 'Cubiertas de batería',
-//           },
-//         ],
-//       },
-//     ],
-//   },
-//   {
-//     name: 'Interiores',
-//     value: 'Interiores',
-//   },
-//   {
-//     name: 'Exteriores',
-//     value: 'Exteriores',
-//   },
-// ];
 const Sidebar = () => {
-  // const [openLink, setOpenLink] = useState()
-  const [toggleMenu, setToggleMenu] = useState(false);
-
-  const { children } = useFetchCategory('menu');
-  console.log(children);
-
-  const handleMenuClick = () => {
-    setToggleMenu(!toggleMenu);
-    console.log(toggleMenu);
-  };
-
-  // const displayMenu = results.map((result) => console.log(result));
-
   return (
-    <>
-      <BiMenu size="2em" className="m-2" onClick={() => handleMenuClick()} />
-      <div
-        id="sidebar-links"
-        className={`sidebar absolute bg-blue-600 text-white menu${
-          toggleMenu ? ' open' : ''
-        }`}
-      >
-        {/* <ul className="p-4 w-4/5">
-        <li className="px-1 py-2">Refacciones</li>
-        <li className="px-1 py-2">Interiores</li>
-        <li className="px-1 py-2">Exteriores</li>
-        <li className="px-1 py-2">Remolque</li>
-        <li className="px-1 py-2">Herramientas</li>
-        <li className="px-1 py-2">Químicos, Aceites y Productos de Lavado</li>
-        <li className="px-1 py-2">Alto Desempeño</li>
-      </ul> */}
-        {/* <Accordion items={items} /> */}
-
-        {children &&
-          children.map((item) => (
-            <div key={item.category} className="p-4 w-4/5">
-              {item.category}
-            </div>
-          ))}
-
-        {/* <Menu /> */}
-      </div>
-    </>
+    <main className="flex bg-gray-100">
+      <aside className="bg-blue-500 relative h-screen w-72 md:w-64 hidden sm:block shadow-xl ">
+        <div className="p-6">
+          <a href="" className="text-white text-3x1 font-semibold hover:text-gray-300">
+            <FaCog className="mr-3" />
+            Admin
+          </a>
+        </div>
+        <nav className="text-white text-base font-semibold pt-3">
+          <a href="" className="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+            <FaTachometerAlt className="mr-3" />
+            Productos
+          </a>
+          <a href="" className="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+            <FaTachometerAlt className="mr-3" />
+            Dashboard
+          </a>
+        </nav>
+      </aside>
+    </main>
   );
 };
 

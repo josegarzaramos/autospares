@@ -1,0 +1,14 @@
+label {
+  font-weight: 700;
+}
+
+.container {
+  padding: 0.7em 3em;
+}
+
+input {
+}
+
+.section-title {
+  display: inline;
+}
