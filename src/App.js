@@ -1,16 +1,28 @@
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 //import Dashboard from './pages/Dashboard';
-//import NewProduct from './pages/NewProduct';
+import NewProduct from './pages/NewProduct';
+import ProductsList from './pages/ProductsList';
 
-//import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div>
+    <Router>
       <Navbar />
-      <Sidebar />
-    </div>
+      <div className="flex">
+        <Sidebar />
+
+        <Switch>
+          <Route path="/agregar/producto">
+            <NewProduct />
+          </Route>
+          <Route path="/productos">
+            <ProductsList />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 

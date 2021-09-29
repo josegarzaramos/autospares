@@ -34,3 +34,17 @@
   top: 58px;
   bottom: 0;
 }
+
+aside::after {
+  content: '';
+  background: #3b82f6;
+  height: 100%;
+  width: inherit;
+  position: fixed;
+  top: 0;
+  z-index: -30;
+  /* border-bottom-right-radius: 12px; */
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+  /* border-radius: 12px; */
+}
