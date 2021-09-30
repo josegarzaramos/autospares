@@ -192,7 +192,7 @@ thead tr th {
   margin-bottom: auto;
 } */
 
-@import url('https://fonts.googleapis.com/css?family=PT+Mono|PT+Sans');
+/* @import url('https://fonts.googleapis.com/css?family=PT+Mono|PT+Sans'); */
 
 :root {
   --color-primary: hsl(203, 100%, 38%);
@@ -203,7 +203,7 @@ thead tr th {
 }
 
 body {
-  font-family: 'PT Sans', sans-serif;
+  /* font-family: 'PT Sans', sans-serif; */
   color: var(--color-text);
   background-color: var(--color-background);
   font-size: 1rem;
@@ -285,13 +285,30 @@ th {
   color: #3b82f6;
 }
 
-tr:hover {
+tbody tr:hover {
   color: #fff;
   background: #3b82f6;
 }
 
+tbody tr:hover td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+tbody tr:hover td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
 tr:hover .btn {
   box-shadow: 0 0 0 1px #fff inset;
+}
+
+input:-internal-autofill-selected {
+  appearance: none !important;
+  background-image: none !important;
+  background-color: none !important;
+  color: none !important;
 }
 
 @media only screen and (max-width: 650px) {

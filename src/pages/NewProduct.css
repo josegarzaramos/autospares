@@ -1,14 +1,37 @@
-label {
+.send-button {
+  background: #3b82f6;
   font-weight: 700;
 }
 
-.container {
-  padding: 0.7em 3em;
+label {
+  color: #3b82f6;
 }
 
-input {
+input:focus-visible {
+  outline: solid 1px #3b82f6;
+  /* border-color: aquamarine; */
 }
 
-.section-title {
-  display: inline;
+.price {
+  align-items: center;
+  background: #fff;
+}
+
+.price input {
+  align-items: center;
+  width: 100%;
+  background: none;
+}
+
+.price input:focus-visible {
+  outline: none;
+}
+
+.price:focus-within {
+  outline: solid 1px #3b82f6;
+}
+
+select:focus {
+  outline: solid 1px #3b82f6;
+  /* border-color: aquamarine; */
 }

@@ -3,6 +3,7 @@
 /* eslint-disable react/no-unescaped-entities */
 // import Product from './Product';
 import { useEffect } from 'react';
+import { BiChevronDown } from 'react-icons/bi';
 import './ProductList.css';
 
 // const ProductsList = () => {
@@ -200,15 +201,35 @@ const ProductsList = () => {
       <table className="table table w-11/12 md:w-5/6">
         <thead className="table__header">
           <tr className="table__row">
-            <th className="table__cell u-text-left w-2/12">Marca</th>
-            <th className="table__cell u-text-right w-2/auto">Nombre</th>
-            <th className="table__cell u-text-right w-2/12">Precio</th>
-            <th className="table__cell u-text-right w-2/12">Cantidad</th>
+            <th className="table__cell u-text-left w-2/12">
+              <div className="inline-flex">
+                <p className="self-center">Marca</p>
+                <BiChevronDown className="self-center" size="2em" />
+              </div>
+            </th>
+            <th className="table__cell u-text-right w-2/auto">
+              <div className="inline-flex">
+                <p className="self-center">Nombre</p>
+                <BiChevronDown className="self-center" size="2em" />
+              </div>
+            </th>
+            <th className="table__cell u-text-right w-2/12">
+              <div className="inline-flex">
+                <p className="self-center">Precio</p>
+                <BiChevronDown className="self-center" size="2em" />
+              </div>
+            </th>
+            <th className="table__cell u-text-right w-2/12">
+              <div className="inline-flex">
+                <p className="self-center">Cantidad</p>
+                <BiChevronDown className="self-center" size="2em" />
+              </div>
+            </th>
             <th className="w-2/12"></th>
           </tr>
         </thead>
-        {/* <tbody> */}
-        {/* <tr className="table__row">
+        <tbody>
+          {/* <tr className="table__row">
             <td className="table__account table__cell">
               <a href="#" className="table__account-content table__link">
                 <span className="table__account-number">1110-26-000487</span>{' '}
@@ -230,9 +251,9 @@ const ProductsList = () => {
               </a>
             </td>
           </tr> */}
-        {/* {testReturn()} */}
-        {showProducts(products)}
-        {/* </tbody> */}
+          {/* {testReturn()} */}
+          {showProducts(products)}
+        </tbody>
 
         <tfoot>
           <tr className="table__row table__row--last">
