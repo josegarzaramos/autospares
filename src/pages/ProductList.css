@@ -205,7 +205,7 @@ thead tr th {
 body {
   /* font-family: 'PT Sans', sans-serif; */
   color: var(--color-text);
-  background-color: var(--color-background);
+  /* background-color: var(--color-background); */
   font-size: 1rem;
 }
 
