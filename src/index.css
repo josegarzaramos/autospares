@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.Toastify__toast-theme--light {
+  color: #3b82f6 !important;
+  font-weight: 500 !important;
+}
+
+.Toastify__toast {
+  /* box-shadow: 0 0 22px #dce9fe !important; */
+  box-shadow: 0 2px 14px #dce9fe !important;
+  border-radius: 12px !important;
+}
+
+.Toastify__toast-icon {
+  width: auto !important;
+}
+
+.Toastify__close-button > svg {
+  fill: #3b82f6 !important;
+}
+
+:root {
+  --toastify-icon-color-success: #000 !important;
+}

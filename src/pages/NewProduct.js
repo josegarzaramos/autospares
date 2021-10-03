@@ -2,6 +2,9 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import Spinner from '../components/common/Spinner';
+import { ToastContainer, toast } from 'react-toastify';
+import { BiCheck } from 'react-icons/bi';
+import 'react-toastify/dist/ReactToastify.css';
 import './NewProduct.css';
 
 // import useFetchCategory from '../hooks/useFetch-hook';
@@ -22,20 +25,22 @@ const NewProduct = () => {
 
   const onSubmit = (data) => {
     setLoading(true);
-    fetch('http://localhost:5000/Producto', {
+    fetch('http://localhost:5000/productos/nuevo', {
       method: 'POST', // or 'PUT'
       body: JSON.stringify(data), // data can be `string` or {object}!
       headers: {
         'Content-Type': 'application/json',
       },
     })
-      .then((res) => res.json())
+      .then((response) => {
+        console.log('Se agregó el siguiente producto:', response.body);
+        setLoading(false);
+        toast.success('Producto agregado', {
+          icon: <BiCheck size="1.5em" color="#3b82f6" />,
+        });
+      })
       .catch((error) => {
         console.error('Error:', error);
-        setLoading(false);
-      })
-      .then((response) => {
-        console.log('Se agregó el siguiente producto:', response);
         setLoading(false);
       });
   };
@@ -47,6 +52,17 @@ const NewProduct = () => {
 
   return (
     <div className="w-screen">
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       {loading ? <Spinner /> : null}
       {/* <Spinner loading={loading} /> */}
       <div className="mx-auto p-4 block w-11/12 md:w-4/6">

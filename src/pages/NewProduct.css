@@ -1,6 +1,7 @@
 .send-button {
   background: #3b82f6;
   font-weight: 700;
+  margin-left: auto;
 }
 
 label {
