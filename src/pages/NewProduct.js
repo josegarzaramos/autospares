@@ -51,7 +51,7 @@ const NewProduct = () => {
   // };
 
   return (
-    <div className="w-screen">
+    <div className="w-screen main-container">
       <ToastContainer
         position="top-right"
         autoClose={3000}

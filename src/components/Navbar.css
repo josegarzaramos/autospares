@@ -1,0 +1,12 @@
+nav {
+  width: 100%;
+  position: sticky;
+  z-index: 3;
+  top: 0;
+}
+
+#search-form {
+  backdrop-filter: blur(10px);
+  background: #3b82f614;
+  border-radius: 12px;
+}

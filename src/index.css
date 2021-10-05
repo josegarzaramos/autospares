@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.main-container {
+  flex: 1;
+  margin: 1em 2em 1em 2em;
+  /* box-shadow: 0 0 22px #cbddf9; */
+  border-radius: 16px;
+  /* box-shadow: 0px 0px 24px #bed4f7; */
+  box-shadow: 0px 0px 24px #bed4f78c;
+}
+
 .Toastify__toast-theme--light {
   color: #3b82f6 !important;
   font-weight: 500 !important;

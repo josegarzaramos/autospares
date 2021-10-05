@@ -10,7 +10,7 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <div className="flex">
+      <div className="flex h-full">
         <Sidebar />
 
         <Switch>
