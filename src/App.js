@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar';
 //import Dashboard from './pages/Dashboard';
 import NewProduct from './pages/NewProduct';
 import ProductsList from './pages/ProductsList';
+import Product from './pages/Product';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -14,8 +15,11 @@ const App = () => {
         <Sidebar />
 
         <Switch>
-          <Route path="/agregar/producto">
+          <Route path="/productos/nuevo">
             <NewProduct />
+          </Route>
+          <Route path="/productos/:id" exact>
+            <Product />
           </Route>
           <Route path="/productos">
             <ProductsList />

@@ -25,11 +25,11 @@ const Sidebar = () => {
             <p className="md:hidden">Productos</p>
           </Link>
           <Link
-            to="/dashboard"
+            to="/productos/nuevo"
             className="flex items-center active-nav-link text-white py-4 nav-item justify-center"
           >
             <BiDetail className="mr-3 md:mr-0" size="1.1em" />
-            <p className="md:hidden">Dashboard</p>
+            <p className="md:hidden">Nuevo</p>
           </Link>
         </div>
         <div className="menu-settings">

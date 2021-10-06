@@ -3,6 +3,7 @@
 /* eslint-disable react/no-unescaped-entities */
 // import Product from './Product';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { BiChevronDown } from 'react-icons/bi';
 import './ProductList.css';
 
@@ -22,7 +23,7 @@ let products = [
     name: 'Paquete de bujias 4 piezas',
     price: 98.44,
     stock: 10,
-    id: '60ecdfdf2a37d203a727afe0',
+    id: '61554eb4f8448331243eb01f',
   },
   {
     brand: 'Bardahl',
@@ -84,13 +85,21 @@ const showProducts = (products) => {
   // debugger;
   return products.map((product) => {
     return (
-      <tr className="table__row" key={product.name}>
-        <a
-          href={'productos/' + product.id}
+      <tr
+        className="table__row"
+        key={product.name}
+        data-href="http://www.google.com"
+      >
+        <Link
+          to={'productos/' + product.id}
           className="table__account-content table__link table__link contents"
         >
           <td className="table__account table__cell">
             <span className="table__account-number">{product.brand}</span>{' '}
+            <Link
+              to={'productos/' + product.id}
+              className="table__account-content table__link table__link contents"
+            ></Link>
           </td>
           <td className="table__balance table__cell u-font-mono">
             <span className="num_negative">{product.name}</span>
@@ -106,7 +115,7 @@ const showProducts = (products) => {
             Transfer
           </a>
         </td> */}
-        </a>
+        </Link>
       </tr>
     );
   });
