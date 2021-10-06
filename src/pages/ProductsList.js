@@ -22,37 +22,49 @@ let products = [
     name: 'Paquete de bujias 4 piezas',
     price: 98.44,
     stock: 10,
+    id: '60ecdfdf2a37d203a727afe0',
   },
-  { brand: 'Bardahl', name: 'Anticongelante', price: 60.5, stock: 23 },
+  {
+    brand: 'Bardahl',
+    name: 'Anticongelante',
+    price: 60.5,
+    stock: 23,
+    id: '418748744',
+  },
   {
     brand: 'LTH',
     name: 'Batería para carro',
     price: 390.54,
     stock: 30,
+    id: '414',
   },
   {
     brand: 'Meguiar',
     name: 'Protector Supreme Shine de 16oz',
     price: 78.24,
     stock: 15,
+    id: '01',
   },
   {
     brand: 'HELIX',
     name: 'HX8 Aceite para motor Sintetico 5W-30 4 Litros',
     price: 1215.53,
     stock: 43,
+    id: '44',
   },
   {
     brand: 'Castrol',
     name: 'Castrol Synthetic Aceite de Motor 1598B1',
     price: 1450.04,
     stock: 12,
+    id: '22',
   },
   {
     brand: 'Mobil',
     name: 'Sintetico 5W-30 Aceite de Motor 1 Cuarto',
     price: 269.02,
     stock: 25,
+    id: '95',
   },
 ];
 
@@ -73,28 +85,28 @@ const showProducts = (products) => {
   return products.map((product) => {
     return (
       <tr className="table__row" key={product.name}>
-        <td className="table__account table__cell">
-          <a
-            href="#"
-            className="table__account-content table__link table__link"
-          >
+        <a
+          href={'productos/' + product.id}
+          className="table__account-content table__link table__link contents"
+        >
+          <td className="table__account table__cell">
             <span className="table__account-number">{product.brand}</span>{' '}
-          </a>
-        </td>
-        <td className="table__balance table__cell u-text-right u-font-mono">
-          <span className="num_negative">{product.name}</span>
-        </td>
-        <td className="table__limit table__cell u-text-right u-font-mono">
-          ${product.price}
-        </td>
-        <td className="table__available table__cell u-text-right u-font-mono">
-          {product.stock}
-        </td>
-        <td className="table__transfer table__cell u-text-center">
+          </td>
+          <td className="table__balance table__cell u-font-mono">
+            <span className="num_negative">{product.name}</span>
+          </td>
+          <td className="table__limit table__cell u-font-mono">
+            ${product.price}
+          </td>
+          <td className="table__available table__cell u-font-mono text-center">
+            {product.stock}
+          </td>
+          {/* <td className="table__transfer table__cell u-text-center">
           <a className="btn" href="">
             Transfer
           </a>
-        </td>
+        </td> */}
+        </a>
       </tr>
     );
   });
@@ -207,25 +219,25 @@ const ProductsList = () => {
                 <BiChevronDown className="self-center" size="2em" />
               </div>
             </th>
-            <th className="table__cell u-text-right w-2/auto">
+            <th className="table__cell w-2/auto">
               <div className="inline-flex">
                 <p className="self-center">Nombre</p>
                 <BiChevronDown className="self-center" size="2em" />
               </div>
             </th>
-            <th className="table__cell u-text-right w-2/12">
+            <th className="table__cell w-2/12">
               <div className="inline-flex">
                 <p className="self-center">Precio</p>
                 <BiChevronDown className="self-center" size="2em" />
               </div>
             </th>
-            <th className="table__cell u-text-right w-2/12">
+            <th className="table__cell text-center w-2/12 ">
               <div className="inline-flex">
                 <p className="self-center">Cantidad</p>
                 <BiChevronDown className="self-center" size="2em" />
               </div>
             </th>
-            <th className="w-2/12"></th>
+            {/* <th className="w-2/12"></th> */}
           </tr>
         </thead>
         <tbody>
@@ -255,7 +267,7 @@ const ProductsList = () => {
           {showProducts(products)}
         </tbody>
 
-        <tfoot>
+        {/* <tfoot>
           <tr className="table__row table__row--last">
             <td className="table__cell" align="right">
               Total (<acronym title="US Dollars">USD</acronym>):
@@ -271,7 +283,7 @@ const ProductsList = () => {
             </td>
             <td></td>
           </tr>
-        </tfoot>
+        </tfoot> */}
       </table>
     </div>
   );
