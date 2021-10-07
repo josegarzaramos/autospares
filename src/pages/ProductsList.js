@@ -2,7 +2,8 @@
 /* eslint-disable no-debugger */
 /* eslint-disable react/no-unescaped-entities */
 // import Product from './Product';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import useFetchCategory from '../hooks/useFetch-hook';
 import { Link } from 'react-router-dom';
 import { BiChevronDown } from 'react-icons/bi';
 import './ProductList.css';
@@ -91,24 +92,20 @@ const showProducts = (products) => {
         data-href="http://www.google.com"
       >
         <Link
-          to={'productos/' + product.id}
+          to={'productos/' + product._id}
           className="table__account-content table__link table__link contents"
         >
           <td className="table__account table__cell">
-            <span className="table__account-number">{product.brand}</span>{' '}
-            <Link
-              to={'productos/' + product.id}
-              className="table__account-content table__link table__link contents"
-            ></Link>
+            <span className="table__account-number">{product.marca}</span>{' '}
           </td>
           <td className="table__balance table__cell u-font-mono">
-            <span className="num_negative">{product.name}</span>
+            <span className="num_negative">{product.nombre}</span>
           </td>
           <td className="table__limit table__cell u-font-mono">
-            ${product.price}
+            ${product.precio}
           </td>
           <td className="table__available table__cell u-font-mono text-center">
-            {product.stock}
+            {product.cantidad}
           </td>
           {/* <td className="table__transfer table__cell u-text-center">
           <a className="btn" href="">
@@ -122,102 +119,9 @@ const showProducts = (products) => {
 };
 
 const ProductsList = () => {
-  // useEffect(() => {
-  //   <div className="table-wrap w-screen">
-  //     <table className="table table w-11/12 md:w-5/6">
-  //       <thead className="table__header">
-  //         <tr className="table__row">
-  //           <th className="table__cell u-text-left w-2/12">Marca</th>
-  //           <th className="table__cell u-text-right w-2/auto">Nombre</th>
-  //           <th className="table__cell u-text-right w-2/12">Precio</th>
-  //           <th className="table__cell u-text-right w-2/12">Cantidad</th>
-  //           <th className="w-2/12"></th>
-  //         </tr>
-  //       </thead>
-  //       {showProducts(products)}
-  //       <tfoot>
-  //         <tr className="table__row table__row--last">
-  //           <td className="table__cell" align="right">
-  //             Total (<acronym title="US Dollars">USD</acronym>):
-  //           </td>
-  //           <td className="table__balance table__cell u-text-right u-font-mono">
-  //             900.000
-  //           </td>
-  //           <td className="table__limit table__cell u-text-right u-font-mono">
-  //             500.000
-  //           </td>
-  //           <td className="table__available table__available--total table__cell u-text-right u-font-mono">
-  //             1.400.000
-  //           </td>
-  //           <td></td>
-  //         </tr>
-  //       </tfoot>
-  //     </table>
-  //   </div>;
-  // }, []);
+  const fetchedData = useFetchCategory('productos');
 
   return (
-    // <div className="flex items-start place-content-start flex-wrap w-full p-10">
-    //   <table className="table-auto w-full font-medium">
-    //     <thead>
-    //       <tr>
-    //         <th className="w-1/4">Marca</th>
-    //         <th className="w-2/4">Nombre</th>
-    //         <th className="w-1/4">Precio</th>
-    //         <th className="w-auto">Cantidad</th>
-    //       </tr>
-    //     </thead>
-    //     <tbody>
-    //       <tr>
-    //         <td>Quaker</td>
-    //         <td>Aceite para motor</td>
-    //         <td>$125.12</td>
-    //         <td>23</td>
-    //       </tr>
-    //       <tr>
-    //         <td>Quaker</td>
-    //         <td>Aceite para motor</td>
-    //         <td>$125.12</td>
-    //         <td>23</td>
-    //       </tr>
-    //       <tr>
-    //         <td>Quaker</td>
-    //         <td>Aceite para motor</td>
-    //         <td>$125.12</td>
-    //         <td>23</td>
-    //       </tr>
-    //     </tbody>
-    //   </table>
-    // </div>
-    // <table className="table-auto block">
-    //   <thead>
-    //     <tr>
-    //       <th>Title</th>
-    //       <th>Author</th>
-    //       <th>Views</th>
-    //     </tr>
-    //   </thead>
-    //   <tbody>
-    //     <tr>
-    //       <td>Intro to CSS</td>
-    //       <td>Adam</td>
-    //       <td>858</td>
-    //     </tr>
-    //     <tr className="bg-emerald-200">
-    //       <td>
-    //         A Long and Winding Tour of the History of UI Frameworks and Tools
-    //         and the Impact on Design
-    //       </td>
-    //       <td>Adam</td>
-    //       <td>112</td>
-    //     </tr>
-    //     <tr>
-    //       <td>Intro to JavaScript</td>
-    //       <td>Chris</td>
-    //       <td>1,280</td>
-    //     </tr>
-    //   </tbody>
-    // </table>
     <div className="table-wrap w-screen">
       <table className="table table w-11/12 md:w-5/6">
         <thead className="table__header">
@@ -273,10 +177,10 @@ const ProductsList = () => {
             </td>
           </tr> */}
           {/* {testReturn()} */}
-          {showProducts(products)}
+          {showProducts(fetchedData)}
         </tbody>
 
-        {/* <tfoot>
+        <tfoot>
           <tr className="table__row table__row--last">
             <td className="table__cell" align="right">
               Total (<acronym title="US Dollars">USD</acronym>):
@@ -292,7 +196,7 @@ const ProductsList = () => {
             </td>
             <td></td>
           </tr>
-        </tfoot> */}
+        </tfoot>
       </table>
     </div>
   );

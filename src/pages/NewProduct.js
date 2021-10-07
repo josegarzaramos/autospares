@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
@@ -24,10 +25,17 @@ const NewProduct = () => {
   // const onSubmit = (data) => console.log(data);
 
   const onSubmit = (data) => {
+    let { precio, cantidad } = data;
+    precio = parseFloat(precio);
+    cantidad = parseInt(cantidad);
+
+    const formattedData = { ...data, precio, cantidad };
+    console.log(formattedData);
+
     setLoading(true);
     fetch('http://localhost:5000/productos/nuevo', {
       method: 'POST', // or 'PUT'
-      body: JSON.stringify(data), // data can be `string` or {object}!
+      body: JSON.stringify(formattedData), // data can be `string` or {object}!
       headers: {
         'Content-Type': 'application/json',
       },
