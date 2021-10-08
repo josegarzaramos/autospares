@@ -10,3 +10,13 @@ nav {
   background: #3b82f614;
   border-radius: 12px;
 }
+
+input {
+  font-weight: 300;
+}
+
+input:focus {
+  background: none;
+  font-weight: 700;
+  color: #3b82f6;
+}

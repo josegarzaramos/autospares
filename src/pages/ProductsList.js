@@ -3,9 +3,10 @@
 /* eslint-disable react/no-unescaped-entities */
 // import Product from './Product';
 import { useState, useEffect } from 'react';
-import useFetchCategory from '../hooks/useFetch-hook';
 import { Link } from 'react-router-dom';
 import { BiChevronDown } from 'react-icons/bi';
+import Spinner from '../components/common/Spinner';
+import useFetchCategory from '../hooks/useFetch-hook';
 import './ProductList.css';
 
 // const ProductsList = () => {
@@ -88,7 +89,7 @@ const showProducts = (products) => {
     return (
       <tr
         className="table__row"
-        key={product.name}
+        key={product.nombre}
         data-href="http://www.google.com"
       >
         <Link
@@ -120,9 +121,11 @@ const showProducts = (products) => {
 
 const ProductsList = () => {
   const fetchedData = useFetchCategory('productos');
+  // console.log(fetchedData);
 
   return (
-    <div className="table-wrap w-screen">
+    <div>
+      {fetchedData.length > 0 ? null : <Spinner />}
       <table className="table table w-11/12 md:w-5/6">
         <thead className="table__header">
           <tr className="table__row">

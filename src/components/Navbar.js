@@ -37,8 +37,8 @@ const Navbar = () => {
                   </button>
                 </span>
                 <input
-                  type="search"
-                  className="py-2 text-md text-gray-900 w-full rounded-md pl-10 bg-transparent placeholder-gray-800 focus:outline-none focus:bg-white focus:text-gray-800"
+                  type="text"
+                  className="py-2 text-md text-gray-900 w-full rounded-md pl-10 bg-transparent placeholder-gray-800 focus:outline-none"
                   placeholder="Buscar"
                 />
               </div>

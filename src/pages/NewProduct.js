@@ -59,7 +59,7 @@ const NewProduct = () => {
   // };
 
   return (
-    <div className="w-screen main-container">
+    <>
       <ToastContainer
         position="top-right"
         autoClose={3000}
@@ -73,7 +73,7 @@ const NewProduct = () => {
       />
       {loading ? <Spinner /> : null}
       {/* <Spinner loading={loading} /> */}
-      <div className="mx-auto p-4 block w-11/12 md:w-4/6">
+      <div className="mx-auto mt-4 px-6 py-8 block w-11/12 md:w-4/6 card-shadow">
         <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
           <div className="mb-6 inline-block w-1/3">
             <label
@@ -222,7 +222,7 @@ const NewProduct = () => {
           </button>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 

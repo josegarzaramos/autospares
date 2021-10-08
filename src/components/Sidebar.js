@@ -6,7 +6,7 @@ import './Sidebar.css';
 const Sidebar = () => {
   return (
     // <aside className="bg-blue-500 relative h-screen w-72 md:w-64 hidden sm:block shadow-xl flex-none">
-    <aside className="w-72 md:w-14 hidden sm:block shadow-xl flex-none ml-4">
+    <aside className="w-14 hidden sm:block shadow-xl flex-none ml-4">
       {/* <div className="py-4 pl-6"></div> */}
       <div className="menu-links text-white text-base font-semibold fixed">
         <div className="menu-pages">
