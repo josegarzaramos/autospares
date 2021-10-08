@@ -1,9 +1,10 @@
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-//import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard';
 import NewProduct from './pages/NewProduct';
 import ProductsList from './pages/ProductsList';
 import Product from './pages/Product';
+import User from './pages/User';
 // import Container from './components/common/Container';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -24,6 +25,12 @@ const App = () => {
             </Route>
             <Route path="/productos">
               <ProductsList />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+            <Route path="/usuario">
+              <User />
             </Route>
           </Switch>
         </div>

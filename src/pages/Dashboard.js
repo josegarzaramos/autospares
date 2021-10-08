@@ -1,30 +1,14 @@
-// import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-// import axios from 'axios';
-
-import useFetchCategory from '../hooks/useFetch-hook';
+import Card from '../components/common/Card';
 
 const Dashboard = () => {
-  const results = useFetchCategory('productos');
-
   return (
-    <div>
-      <Link
-        to={{
-          pathname: '/',
-        }}
-      >
-        <h1 className="font-bold">Go to index</h1>
-      </Link>
-
-      {/* <p className="p-4">Productos encontrados: {results.length}</p> */}
-      {results.map((result) => {
-        return (
-          <div key={result.nombre} className="p-4">
-            <p>{result.nombre}</p>
-          </div>
-        );
-      })}
+    <div className="m-4">
+      <Card>
+        <h3>Total de productos:</h3>
+      </Card>
+      <Card>
+        <p>test</p>
+      </Card>
     </div>
   );
 };
